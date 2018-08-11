@@ -1,27 +1,19 @@
 package ai.nanos.test.config.dbmigrations;
 
 import ai.nanos.test.domain.Authority;
-import ai.nanos.test.domain.Campaign;
 import ai.nanos.test.domain.User;
 import ai.nanos.test.security.AuthoritiesConstants;
 import com.github.mongobee.changeset.ChangeLog;
 import com.github.mongobee.changeset.ChangeSet;
-import com.google.gson.Gson;
-import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.mongodb.core.MongoTemplate;
 
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.time.Instant;
-import java.util.Arrays;
 
 /**
  * Creates the initial database setup
  */
 @ChangeLog(order = "001")
 public class InitialSetupMigration {
-    private static final String CAMPAIGNS_DATA_FILE = "data.json";
 
     @ChangeSet(order = "01", author = "initiator", id = "01-addAuthorities")
     public void addAuthorities(MongoTemplate mongoTemplate) {
@@ -96,27 +88,5 @@ public class InitialSetupMigration {
         userUser.setCreatedDate(Instant.now());
         userUser.getAuthorities().add(userAuthority);
         mongoTemplate.save(userUser);
-    }
-
-    @ChangeSet(order = "03", author = "andre", id = "03-addCampaigns")
-    public void addCampaigns(MongoTemplate mongoTemplate) {
-        String dataFile = getResource(CAMPAIGNS_DATA_FILE);
-
-        if (StringUtils.isNotEmpty(dataFile)) {
-            Gson gson = new Gson();
-            Campaign[] campaigns = gson.fromJson(dataFile, Campaign[].class);
-            Arrays.stream(campaigns).forEach(mongoTemplate::save);
-        }
-    }
-
-    private String getResource(String fileName) {
-        String result = "";
-        try {
-            result = IOUtils.toString(getClass().getClassLoader().getResourceAsStream(fileName), StandardCharsets.UTF_8);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return result;
     }
 }

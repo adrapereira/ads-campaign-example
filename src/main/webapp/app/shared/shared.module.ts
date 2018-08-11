@@ -1,15 +1,15 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
 
 import { NgbDateMomentAdapter } from './util/datepicker-adapter';
-import { NanosSharedLibsModule, NanosSharedCommonModule, JhiLoginModalComponent, HasAnyAuthorityDirective } from './';
+import { HasAnyAuthorityDirective, NanosLoginModalComponent, NanosSharedCommonModule, NanosSharedLibsModule } from './';
 
 @NgModule({
     imports: [NanosSharedLibsModule, NanosSharedCommonModule],
-    declarations: [JhiLoginModalComponent, HasAnyAuthorityDirective],
+    declarations: [NanosLoginModalComponent, HasAnyAuthorityDirective],
     providers: [{ provide: NgbDateAdapter, useClass: NgbDateMomentAdapter }],
-    entryComponents: [JhiLoginModalComponent],
-    exports: [NanosSharedCommonModule, JhiLoginModalComponent, HasAnyAuthorityDirective],
+    entryComponents: [NanosLoginModalComponent],
+    exports: [NanosSharedCommonModule, NanosLoginModalComponent, HasAnyAuthorityDirective],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class NanosSharedModule {}

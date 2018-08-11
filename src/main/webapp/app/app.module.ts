@@ -1,9 +1,9 @@
 import './vendor.ts';
 
-import { NgModule, Injector } from '@angular/core';
+import { Injector, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { Ng2Webstorage, LocalStorageService, SessionStorageService } from 'ngx-webstorage';
+import { LocalStorageService, Ng2Webstorage, SessionStorageService } from 'ngx-webstorage';
 import { JhiEventManager } from 'ng-jhipster';
 
 import { AuthInterceptor } from './blocks/interceptor/auth.interceptor';
@@ -17,13 +17,13 @@ import { NanosHomeModule } from './home/home.module';
 import { NanosAccountModule } from './account/account.module';
 import { NanosEntityModule } from './entities/entity.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
-import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ActiveMenuDirective, ErrorComponent } from './layouts';
+import { ActiveMenuDirective, ErrorComponent, FooterComponent, NanosMainComponent, NavbarComponent, PageRibbonComponent } from './layouts';
 
 @NgModule({
     imports: [
         BrowserModule,
         NanosAppRoutingModule,
-        Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-' }),
+        Ng2Webstorage.forRoot({ prefix: 'nanos', separator: '-' }),
         NanosSharedModule,
         NanosCoreModule,
         NanosHomeModule,
@@ -31,7 +31,7 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         NanosEntityModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
-    declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
+    declarations: [NanosMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
     providers: [
         {
             provide: HTTP_INTERCEPTORS,
@@ -58,6 +58,6 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
             deps: [Injector]
         }
     ],
-    bootstrap: [JhiMainComponent]
+    bootstrap: [NanosMainComponent]
 })
 export class NanosAppModule {}

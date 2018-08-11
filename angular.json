@@ -19,12 +19,12 @@
       "inlineStyle": true,
       "inlineTemplate": false,
       "spec": false,
-      "prefix": "jhi",
+        "prefix": "nanos",
       "styleExt": "scss"
     },
     "@schematics/angular:directive": {
       "spec": false,
-      "prefix": "jhi"
+        "prefix": "nanos"
     },
     "@schematics/angular:guard": {
       "spec": false

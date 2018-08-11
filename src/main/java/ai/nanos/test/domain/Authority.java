@@ -2,6 +2,7 @@ package ai.nanos.test.domain;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
@@ -9,7 +10,7 @@ import java.io.Serializable;
 /**
  * An authority (a security role) used by Spring Security.
  */
-@Document(collection = "jhi_authority")
+@Document(collection = "nanos_authority")
 public class Authority implements Serializable {
 
     private static final long serialVersionUID = 1L;

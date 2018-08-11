@@ -1,28 +1,30 @@
-import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NanosTestModule } from '../../../test.module';
-import { JhiHealthCheckComponent } from 'app/admin/health/health.component';
-import { JhiHealthService } from 'app/admin/health/health.service';
+import { NanosHealthCheckComponent } from 'app/admin/health/health.component';
+import { NanosHealthService } from 'app/admin/health/health.service';
 
 describe('Component Tests', () => {
-    describe('JhiHealthCheckComponent', () => {
-        let comp: JhiHealthCheckComponent;
-        let fixture: ComponentFixture<JhiHealthCheckComponent>;
-        let service: JhiHealthService;
+    describe('NanosHealthCheckComponent', () => {
+        let comp: NanosHealthCheckComponent;
+        let fixture: ComponentFixture<NanosHealthCheckComponent>;
+        let service: NanosHealthService;
 
-        beforeEach(async(() => {
-            TestBed.configureTestingModule({
-                imports: [NanosTestModule],
-                declarations: [JhiHealthCheckComponent]
+        beforeEach(
+            async(() => {
+                TestBed.configureTestingModule({
+                    imports: [NanosTestModule],
+                    declarations: [NanosHealthCheckComponent]
+                })
+                    .overrideTemplate(NanosHealthCheckComponent, '')
+                    .compileComponents();
             })
-                .overrideTemplate(JhiHealthCheckComponent, '')
-                .compileComponents();
-        }));
+        );
 
         beforeEach(() => {
-            fixture = TestBed.createComponent(JhiHealthCheckComponent);
+            fixture = TestBed.createComponent(NanosHealthCheckComponent);
             comp = fixture.componentInstance;
-            service = fixture.debugElement.injector.get(JhiHealthService);
+            service = fixture.debugElement.injector.get(NanosHealthService);
         });
 
         describe('baseName and subSystemName', () => {
