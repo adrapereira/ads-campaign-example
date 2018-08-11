@@ -27,7 +27,7 @@
     "useSass": true,
     "clientPackageManager": "yarn",
     "testFrameworks": [],
-      "jhiPrefix": "nanos",
+    "jhiPrefix": "nanos",
     "enableTranslation": true,
     "nativeLanguage": "en",
     "languages": [

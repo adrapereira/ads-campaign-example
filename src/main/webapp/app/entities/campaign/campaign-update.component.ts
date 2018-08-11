@@ -7,7 +7,7 @@ import { ICampaign } from 'app/shared/model/campaign.model';
 import { CampaignService } from './campaign.service';
 
 @Component({
-    selector: 'jhi-campaign-update',
+    selector: 'nanos-campaign-update',
     templateUrl: './campaign-update.component.html'
 })
 export class CampaignUpdateComponent implements OnInit {
@@ -48,7 +48,6 @@ export class CampaignUpdateComponent implements OnInit {
     private onSaveError() {
         this.isSaving = false;
     }
-
     get campaign() {
         return this._campaign;
     }

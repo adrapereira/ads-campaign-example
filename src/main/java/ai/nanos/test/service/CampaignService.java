@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
 /**
  * Service Implementation for managing Campaign.
  */
@@ -30,8 +29,7 @@ public class CampaignService {
      * @return the persisted entity
      */
     public Campaign save(Campaign campaign) {
-        log.debug("Request to save Campaign : {}", campaign);
-        return campaignRepository.save(campaign);
+        log.debug("Request to save Campaign : {}", campaign);        return campaignRepository.save(campaign);
     }
 
     /**

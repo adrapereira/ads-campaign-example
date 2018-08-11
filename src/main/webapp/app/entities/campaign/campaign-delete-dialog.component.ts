@@ -8,7 +8,7 @@ import { ICampaign } from 'app/shared/model/campaign.model';
 import { CampaignService } from './campaign.service';
 
 @Component({
-    selector: 'jhi-campaign-delete-dialog',
+    selector: 'nanos-campaign-delete-dialog',
     templateUrl: './campaign-delete-dialog.component.html'
 })
 export class CampaignDeleteDialogComponent {
@@ -32,7 +32,7 @@ export class CampaignDeleteDialogComponent {
 }
 
 @Component({
-    selector: 'jhi-campaign-delete-popup',
+    selector: 'nanos-campaign-delete-popup',
     template: ''
 })
 export class CampaignDeletePopupComponent implements OnInit, OnDestroy {
@@ -43,24 +43,15 @@ export class CampaignDeletePopupComponent implements OnInit, OnDestroy {
     ngOnInit() {
         this.activatedRoute.data.subscribe(({ campaign }) => {
             setTimeout(() => {
-                this.ngbModalRef = this.modalService.open(CampaignDeleteDialogComponent as Component, {
-                    size: 'lg',
-                    backdrop: 'static'
-                });
+                this.ngbModalRef = this.modalService.open(CampaignDeleteDialogComponent as Component, { size: 'lg', backdrop: 'static' });
                 this.ngbModalRef.componentInstance.campaign = campaign;
                 this.ngbModalRef.result.then(
                     result => {
-                        this.router.navigate([{ outlets: { popup: null } }], {
-                            replaceUrl: true,
-                            queryParamsHandling: 'merge'
-                        });
+                        this.router.navigate([{ outlets: { popup: null } }], { replaceUrl: true, queryParamsHandling: 'merge' });
                         this.ngbModalRef = null;
                     },
                     reason => {
-                        this.router.navigate([{ outlets: { popup: null } }], {
-                            replaceUrl: true,
-                            queryParamsHandling: 'merge'
-                        });
+                        this.router.navigate([{ outlets: { popup: null } }], { replaceUrl: true, queryParamsHandling: 'merge' });
                         this.ngbModalRef = null;
                     }
                 );

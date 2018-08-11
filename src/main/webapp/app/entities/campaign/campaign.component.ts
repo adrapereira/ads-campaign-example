@@ -8,7 +8,7 @@ import { Principal } from 'app/core';
 import { CampaignService } from './campaign.service';
 
 @Component({
-    selector: 'jhi-campaign',
+    selector: 'nanos-campaign',
     templateUrl: './campaign.component.html'
 })
 export class CampaignComponent implements OnInit, OnDestroy {

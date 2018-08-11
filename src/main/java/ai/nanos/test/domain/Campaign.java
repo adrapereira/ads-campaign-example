@@ -2,6 +2,8 @@
 package ai.nanos.test.domain;
 
 import com.google.gson.annotations.SerializedName;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.io.Serializable;
@@ -10,7 +12,7 @@ import java.util.Map;
 
 public class Campaign implements Serializable {
 
-    private Integer id;
+    private String id;
     private String name;
     private String goal;
     @SerializedName("total_budget")
@@ -20,15 +22,15 @@ public class Campaign implements Serializable {
     private Map<String, Object> additionalProperties = new HashMap<>();
     private final static long serialVersionUID = -1971770175661876449L;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public Campaign withId(Integer id) {
+    public Campaign withId(String id) {
         this.id = id;
         return this;
     }
@@ -109,6 +111,38 @@ public class Campaign implements Serializable {
     public Campaign withAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
         return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Campaign campaign = (Campaign) o;
+
+        return new EqualsBuilder()
+            .append(id, campaign.id)
+            .append(name, campaign.name)
+            .append(goal, campaign.goal)
+            .append(totalBudget, campaign.totalBudget)
+            .append(status, campaign.status)
+            .append(platforms, campaign.platforms)
+            .append(additionalProperties, campaign.additionalProperties)
+            .isEquals();
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37)
+            .append(id)
+            .append(name)
+            .append(goal)
+            .append(totalBudget)
+            .append(status)
+            .append(platforms)
+            .append(additionalProperties)
+            .toHashCode();
     }
 
     @Override

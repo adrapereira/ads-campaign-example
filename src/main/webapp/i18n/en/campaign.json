@@ -1,6 +1,7 @@
+
 {
     "nanosApp": {
-        "campaign": {
+        "campaign" : {
             "home": {
                 "title": "Campaigns",
                 "createLabel": "Create a new Campaign",

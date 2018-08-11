@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ICampaign } from 'app/shared/model/campaign.model';
 
 @Component({
-    selector: 'jhi-campaign-detail',
+    selector: 'nanos-campaign-detail',
     templateUrl: './campaign-detail.component.html'
 })
 export class CampaignDetailComponent implements OnInit {

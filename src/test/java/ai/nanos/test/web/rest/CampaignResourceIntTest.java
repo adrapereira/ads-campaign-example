@@ -38,6 +38,7 @@ public class CampaignResourceIntTest {
     @Autowired
     private CampaignRepository campaignRepository;
 
+    
 
     @Autowired
     private CampaignService campaignService;
@@ -68,7 +69,7 @@ public class CampaignResourceIntTest {
 
     /**
      * Create an entity for this test.
-     * <p>
+     *
      * This is a static method, as tests for other entities might also need it,
      * if they test an entity which requires the current entity.
      */
@@ -104,7 +105,7 @@ public class CampaignResourceIntTest {
         int databaseSizeBeforeCreate = campaignRepository.findAll().size();
 
         // Create the Campaign with an existing ID
-        campaign.setId(12345);
+        campaign.setId("existing_id");
 
         // An entity with an existing ID cannot be created, so this API call must fail
         restCampaignMockMvc.perform(post("/api/campaigns")
@@ -128,7 +129,7 @@ public class CampaignResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(campaign.getId())));
     }
-
+    
 
     @Test
     public void getCampaign() throws Exception {
@@ -141,7 +142,6 @@ public class CampaignResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(campaign.getId()));
     }
-
     @Test
     public void getNonExistingCampaign() throws Exception {
         // Get the campaign
@@ -157,7 +157,7 @@ public class CampaignResourceIntTest {
         int databaseSizeBeforeUpdate = campaignRepository.findAll().size();
 
         // Update the campaign
-        Campaign updatedCampaign = campaignRepository.findById("" + campaign.getId()).get();
+        Campaign updatedCampaign = campaignRepository.findById(campaign.getId()).get();
 
         restCampaignMockMvc.perform(put("/api/campaigns")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -206,13 +206,12 @@ public class CampaignResourceIntTest {
 
     @Test
     public void equalsVerifier() throws Exception {
-        TestUtil.equalsVerifier(Campaign.class);
         Campaign campaign1 = new Campaign();
-        campaign1.setId(1);
+        campaign1.setId("id1");
         Campaign campaign2 = new Campaign();
         campaign2.setId(campaign1.getId());
         assertThat(campaign1).isEqualTo(campaign2);
-        campaign2.setId(2);
+        campaign2.setId("id2");
         assertThat(campaign1).isNotEqualTo(campaign2);
         campaign1.setId(null);
         assertThat(campaign1).isNotEqualTo(campaign2);
