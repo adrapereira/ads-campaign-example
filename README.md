@@ -27,13 +27,13 @@ For the client I opted to use Angular since it's one of the best Javascript fram
 The navigation is fairly simple: the user needs to login first before seeing any of the campaigns data. 
 The campaigns list is displayed in a table with some basic info about it and about the platforms it contains.
 
-![home-list-image]
+![home-list-image](https://i.imgur.com/WPLYXi8.jpg)
     
 Clicking the campaign title will direct you to the campaign's detail page. There we can see each of the campaign's platforms and it's details.
 Each platform column is one component (campaign-platform) which adapts to its particularities, such as having `Keywords` data instead of `Interests`.
 The layout also adapts to the number of platforms available in a campaign.
 
-![campaign-detail]
+![campaign-detail](https://i.imgur.com/6Y5p7HW.jpg)
 
     
 ## Development
@@ -138,5 +138,3 @@ To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`)
 [MongoDB]: https://www.mongodb.com/
 [MongoBee]: https://github.com/mongobee/mongobee
 [Swagger]: https://swagger.io/
-[home-list-image]: https://i.imgur.com/WPLYXi8.jpg
-[campaign-detail]: https://i.imgur.com/6Y5p7HW.jpg
