@@ -1,15 +1,15 @@
-import { Injectable } from '@angular/core';
-import { HttpResponse } from '@angular/common/http';
-import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot, Routes } from '@angular/router';
-import { UserRouteAccessService } from 'app/core';
-import { of } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { Campaign, ICampaign } from 'app/shared/model/campaign.model';
-import { CampaignService } from './campaign.service';
-import { CampaignComponent } from './campaign.component';
-import { CampaignDetailComponent } from './campaign-detail.component';
-import { CampaignUpdateComponent } from './campaign-update.component';
-import { CampaignDeletePopupComponent } from './campaign-delete-dialog.component';
+import {Injectable} from '@angular/core';
+import {HttpResponse} from '@angular/common/http';
+import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot, Routes} from '@angular/router';
+import {UserRouteAccessService} from 'app/core';
+import {of} from 'rxjs';
+import {map} from 'rxjs/operators';
+import {Campaign, ICampaign} from 'app/shared/model/campaign.model';
+import {CampaignService} from './campaign.service';
+import {CampaignComponent} from './campaign.component';
+import {CampaignDetailComponent} from './campaign-detail.component';
+import {CampaignUpdateComponent} from './campaign-update.component';
+import {CampaignDeletePopupComponent} from './campaign-delete-dialog.component';
 
 @Injectable({ providedIn: 'root' })
 export class CampaignResolve implements Resolve<ICampaign> {

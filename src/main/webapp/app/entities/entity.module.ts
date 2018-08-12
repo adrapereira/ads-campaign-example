@@ -1,6 +1,6 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 
-import { NanosCampaignModule } from './campaign/campaign.module';
+import {NanosCampaignModule} from './campaign/campaign.module';
 
 /* jhipster-needle-add-entity-module-import - JHipster will add entity modules imports here */
 

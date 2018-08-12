@@ -1,12 +1,13 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
 
-import { NanosSharedModule } from 'app/shared';
+import {NanosSharedModule} from 'app/shared';
 import {
     CampaignComponent,
     CampaignDeleteDialogComponent,
     CampaignDeletePopupComponent,
     CampaignDetailComponent,
+    CampaignListComponent,
     campaignPopupRoute,
     campaignRoute,
     CampaignUpdateComponent
@@ -21,9 +22,11 @@ const ENTITY_STATES = [...campaignRoute, ...campaignPopupRoute];
         CampaignDetailComponent,
         CampaignUpdateComponent,
         CampaignDeleteDialogComponent,
-        CampaignDeletePopupComponent
+        CampaignDeletePopupComponent,
+        CampaignListComponent
     ],
-    entryComponents: [CampaignComponent, CampaignUpdateComponent, CampaignDeleteDialogComponent, CampaignDeletePopupComponent],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    entryComponents: [CampaignComponent, CampaignUpdateComponent, CampaignDeleteDialogComponent, CampaignDeletePopupComponent, CampaignListComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    exports: [CampaignListComponent]
 })
 export class NanosCampaignModule {}

@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-12">
+        <div class="table-responsive" *ngIf="campaigns">
+            <table class="table table-striped">
+                <tr>
+                    <th><span jhiTranslate="global.field.id">ID</span></th>
+                    <th><span>Goal</span></th>
+                    <th><span>Total Budget</span></th>
+                    <th><span>Status</span></th>
+                    <th class="text-center"><span>Facebook</span></th>
+                    <th class="text-center"><span>Instagram</span></th>
+                    <th class="text-center"><span>Google</span></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let campaign of campaigns">
+                    <td><a [routerLink]="['../campaign', campaign.id ]">{{campaign.name}}</a></td>
+                    <td>{{campaign.goal}}</td>
+                    <td>{{campaign.totalBudget}}</td>
+                    <td>{{campaign.status}}</td>
+                    <td>
+                        <span *ngIf="campaign.platforms['facebook'] as platform">
+                            {{platform.status}}
+                            <span class="platform-dates">{{platform.startDate | date:'mediumDate'}} - {{platform.endDate | date:'mediumDate'}}</span>
+                        </span>
+                    </td>
+                    <td>
+                        <span *ngIf="campaign.platforms['instagram'] as platform">
+                            {{platform.status}}
+                            <span class="platform-dates">{{platform.startDate | date:'mediumDate'}} - {{platform.endDate | date:'mediumDate'}}</span>
+                        </span>
+                    </td>
+                    <td>
+                        <span *ngIf="campaign.platforms['google'] as platform">
+                            {{platform.status}}
+                            <span class="platform-dates">{{platform.startDate | date:'mediumDate'}} - {{platform.endDate | date:'mediumDate'}}</span>
+                        </span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,9 +1,9 @@
 /* tslint:disable max-line-length */
-import { getTestBed, TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { CampaignService } from 'app/entities/campaign/campaign.service';
-import { Campaign } from 'app/shared/model/campaign.model';
-import { SERVER_API_URL } from 'app/app.constants';
+import {getTestBed, TestBed} from '@angular/core/testing';
+import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+import {CampaignService} from 'app/entities/campaign/campaign.service';
+import {Campaign} from 'app/shared/model/campaign.model';
+import {SERVER_API_URL} from 'app/app.constants';
 
 describe('Service Tests', () => {
     describe('Campaign Service', () => {

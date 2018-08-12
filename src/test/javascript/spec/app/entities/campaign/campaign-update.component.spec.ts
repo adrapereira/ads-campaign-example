@@ -1,12 +1,12 @@
 /* tslint:disable max-line-length */
-import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
-import { HttpResponse } from '@angular/common/http';
-import { of } from 'rxjs';
+import {ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
+import {HttpResponse} from '@angular/common/http';
+import {of} from 'rxjs';
 
-import { NanosTestModule } from '../../../test.module';
-import { CampaignUpdateComponent } from 'app/entities/campaign/campaign-update.component';
-import { CampaignService } from 'app/entities/campaign/campaign.service';
-import { Campaign } from 'app/shared/model/campaign.model';
+import {NanosTestModule} from '../../../test.module';
+import {CampaignUpdateComponent} from 'app/entities/campaign/campaign-update.component';
+import {CampaignService} from 'app/entities/campaign/campaign.service';
+import {Campaign} from 'app/shared/model/campaign.model';
 
 describe('Component Tests', () => {
     describe('Campaign Management Update Component', () => {

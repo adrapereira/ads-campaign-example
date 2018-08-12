@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {HttpErrorResponse, HttpResponse} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
-import { ICampaign } from 'app/shared/model/campaign.model';
-import { CampaignService } from './campaign.service';
+import {ICampaign} from 'app/shared/model/campaign.model';
+import {CampaignService} from './campaign.service';
 
 @Component({
     selector: 'nanos-campaign-update',
