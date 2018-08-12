@@ -3,7 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {HttpErrorResponse, HttpResponse} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
-import {ICampaign} from 'app/shared/model/campaign.model';
+import {Campaign} from 'app/shared/model/campaign.model';
 import {CampaignService} from './campaign.service';
 
 @Component({
@@ -11,7 +11,7 @@ import {CampaignService} from './campaign.service';
     templateUrl: './campaign-update.component.html'
 })
 export class CampaignUpdateComponent implements OnInit {
-    private _campaign: ICampaign;
+    private _campaign: Campaign;
     isSaving: boolean;
 
     constructor(private campaignService: CampaignService, private activatedRoute: ActivatedRoute) {}
@@ -36,8 +36,8 @@ export class CampaignUpdateComponent implements OnInit {
         }
     }
 
-    private subscribeToSaveResponse(result: Observable<HttpResponse<ICampaign>>) {
-        result.subscribe((res: HttpResponse<ICampaign>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
+    private subscribeToSaveResponse(result: Observable<HttpResponse<Campaign>>) {
+        result.subscribe((res: HttpResponse<Campaign>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
     }
 
     private onSaveSuccess() {
@@ -52,7 +52,7 @@ export class CampaignUpdateComponent implements OnInit {
         return this._campaign;
     }
 
-    set campaign(campaign: ICampaign) {
+    set campaign(campaign: Campaign) {
         this._campaign = campaign;
     }
 }

@@ -3,7 +3,7 @@ import {HttpErrorResponse, HttpResponse} from '@angular/common/http';
 import {Subscription} from 'rxjs';
 import {JhiAlertService, JhiEventManager} from 'ng-jhipster';
 
-import {ICampaign} from 'app/shared/model/campaign.model';
+import {Campaign} from 'app/shared/model/campaign.model';
 import {Principal} from 'app/core';
 import {CampaignService} from './campaign.service';
 
@@ -12,7 +12,7 @@ import {CampaignService} from './campaign.service';
     templateUrl: './campaign.component.html'
 })
 export class CampaignComponent implements OnInit, OnDestroy {
-    campaigns: ICampaign[];
+    campaigns: Campaign[];
     currentAccount: any;
     eventSubscriber: Subscription;
 
@@ -25,7 +25,7 @@ export class CampaignComponent implements OnInit, OnDestroy {
 
     loadAll() {
         this.campaignService.query().subscribe(
-            (res: HttpResponse<ICampaign[]>) => {
+            (res: HttpResponse<Campaign[]>) => {
                 this.campaigns = res.body;
             },
             (res: HttpErrorResponse) => this.onError(res.message)
@@ -44,7 +44,7 @@ export class CampaignComponent implements OnInit, OnDestroy {
         this.eventManager.destroy(this.eventSubscriber);
     }
 
-    trackId(index: number, item: ICampaign) {
+    trackId(index: number, item: Campaign) {
         return item.id;
     }
 

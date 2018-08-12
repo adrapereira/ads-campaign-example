@@ -1,13 +1,13 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpResponse} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
-import { SERVER_API_URL } from 'app/app.constants';
-import { createRequestOption } from 'app/shared';
-import { ICampaign } from 'app/shared/model/campaign.model';
+import {SERVER_API_URL} from 'app/app.constants';
+import {createRequestOption} from 'app/shared';
+import {Campaign} from 'app/shared/model/campaign.model';
 
-type EntityResponseType = HttpResponse<ICampaign>;
-type EntityArrayResponseType = HttpResponse<ICampaign[]>;
+type EntityResponseType = HttpResponse<Campaign>;
+type EntityArrayResponseType = HttpResponse<Campaign[]>;
 
 @Injectable({ providedIn: 'root' })
 export class CampaignService {
@@ -15,21 +15,21 @@ export class CampaignService {
 
     constructor(private http: HttpClient) {}
 
-    create(campaign: ICampaign): Observable<EntityResponseType> {
-        return this.http.post<ICampaign>(this.resourceUrl, campaign, { observe: 'response' });
+    create(campaign: Campaign): Observable<EntityResponseType> {
+        return this.http.post<Campaign>(this.resourceUrl, campaign, { observe: 'response' });
     }
 
-    update(campaign: ICampaign): Observable<EntityResponseType> {
-        return this.http.put<ICampaign>(this.resourceUrl, campaign, { observe: 'response' });
+    update(campaign: Campaign): Observable<EntityResponseType> {
+        return this.http.put<Campaign>(this.resourceUrl, campaign, { observe: 'response' });
     }
 
     find(id: string): Observable<EntityResponseType> {
-        return this.http.get<ICampaign>(`${this.resourceUrl}/${id}`, { observe: 'response' });
+        return this.http.get<Campaign>(`${this.resourceUrl}/${id}`, { observe: 'response' });
     }
 
     query(req?: any): Observable<EntityArrayResponseType> {
         const options = createRequestOption(req);
-        return this.http.get<ICampaign[]>(this.resourceUrl, { params: options, observe: 'response' });
+        return this.http.get<Campaign[]>(this.resourceUrl, { params: options, observe: 'response' });
     }
 
     delete(id: string): Observable<HttpResponse<any>> {

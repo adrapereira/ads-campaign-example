@@ -4,7 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {NgbActiveModal, NgbModal, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import {JhiEventManager} from 'ng-jhipster';
 
-import {ICampaign} from 'app/shared/model/campaign.model';
+import {Campaign} from 'app/shared/model/campaign.model';
 import {CampaignService} from './campaign.service';
 
 @Component({
@@ -12,7 +12,7 @@ import {CampaignService} from './campaign.service';
     templateUrl: './campaign-delete-dialog.component.html'
 })
 export class CampaignDeleteDialogComponent {
-    campaign: ICampaign;
+    campaign: Campaign;
 
     constructor(private campaignService: CampaignService, public activeModal: NgbActiveModal, private eventManager: JhiEventManager) {}
 

@@ -4,7 +4,7 @@ import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot, Routes} from '@ang
 import {UserRouteAccessService} from 'app/core';
 import {of} from 'rxjs';
 import {map} from 'rxjs/operators';
-import {Campaign, ICampaign} from 'app/shared/model/campaign.model';
+import {Campaign} from 'app/shared/model/campaign.model';
 import {CampaignService} from './campaign.service';
 import {CampaignComponent} from './campaign.component';
 import {CampaignDetailComponent} from './campaign-detail.component';
@@ -12,7 +12,7 @@ import {CampaignUpdateComponent} from './campaign-update.component';
 import {CampaignDeletePopupComponent} from './campaign-delete-dialog.component';
 
 @Injectable({ providedIn: 'root' })
-export class CampaignResolve implements Resolve<ICampaign> {
+export class CampaignResolve implements Resolve<Campaign> {
     constructor(private service: CampaignService) {}
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {

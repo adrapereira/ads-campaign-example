@@ -7,13 +7,13 @@
         </div>
         <nanos-alert-error></nanos-alert-error>
     </div>
-    <div class="col-{{columnSize}}" *ngIf="campaign.platforms.facebook">
-        <nanos-campaign-platform name="Facebook" [platform]="campaign.platforms.facebook"></nanos-campaign-platform>
+    <div class="col-{{columnSize}}" *ngIf="campaign.platforms['facebook']">
+        <nanos-campaign-platform name="Facebook" [platform]="campaign.platforms['facebook']"></nanos-campaign-platform>
     </div>
-    <div class="col-{{columnSize}}" *ngIf="campaign.platforms.instagram">
-        <nanos-campaign-platform name="Instagram" [platform]="campaign.platforms.instagram"></nanos-campaign-platform>
+    <div class="col-{{columnSize}}" *ngIf="campaign.platforms['instagram']">
+        <nanos-campaign-platform name="Instagram" [platform]="campaign.platforms['instagram']"></nanos-campaign-platform>
     </div>
-    <div class="col-{{columnSize}}" *ngIf="campaign.platforms.google">
-        <nanos-campaign-platform name="Google" [platform]="campaign.platforms.google"></nanos-campaign-platform>
+    <div class="col-{{columnSize}}" *ngIf="campaign.platforms['google']">
+        <nanos-campaign-platform name="Google" [platform]="campaign.platforms['google']"></nanos-campaign-platform>
     </div>
 </div>

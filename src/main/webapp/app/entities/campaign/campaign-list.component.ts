@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 
-import {ICampaign} from 'app/shared/model/campaign.model';
+import {Campaign} from 'app/shared/model/campaign.model';
 import {CampaignService} from 'app/entities/campaign/campaign.service';
 import {HttpErrorResponse, HttpResponse} from '@angular/common/http';
 import {JhiAlertService} from 'ng-jhipster';
@@ -12,7 +12,7 @@ import {JhiAlertService} from 'ng-jhipster';
     styleUrls: ['campaign-list.component.scss']
 })
 export class CampaignListComponent implements OnInit {
-    campaigns: ICampaign[];
+    campaigns: Campaign[];
 
     constructor(
         private activatedRoute: ActivatedRoute,
@@ -22,7 +22,7 @@ export class CampaignListComponent implements OnInit {
 
     loadAll() {
         this.campaignService.query().subscribe(
-            (res: HttpResponse<ICampaign[]>) => {
+            (res: HttpResponse<Campaign[]>) => {
                 this.campaigns = res.body;
             },
             (res: HttpErrorResponse) => this.onError(res.message)

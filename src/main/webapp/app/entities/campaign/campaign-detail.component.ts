@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 
-import {ICampaign} from 'app/shared/model/campaign.model';
+import {Campaign} from 'app/shared/model/campaign.model';
 
 @Component({
     selector: 'nanos-campaign-detail',
@@ -9,7 +9,7 @@ import {ICampaign} from 'app/shared/model/campaign.model';
     styleUrls: ['./campaign-detail.component.scss']
 })
 export class CampaignDetailComponent implements OnInit {
-    campaign: ICampaign;
+    campaign: Campaign;
     columnSize;
 
     constructor(private activatedRoute: ActivatedRoute) {}
