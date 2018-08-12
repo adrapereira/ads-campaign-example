@@ -1,11 +1,12 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
-import {ICampaign} from 'app/shared/model/campaign.model';
+import { ICampaign } from 'app/shared/model/campaign.model';
 
 @Component({
     selector: 'nanos-campaign-detail',
-    templateUrl: './campaign-detail.component.html'
+    templateUrl: './campaign-detail.component.html',
+    styleUrls: ['./campaign-detail.component.scss']
 })
 export class CampaignDetailComponent implements OnInit {
     campaign: ICampaign;

@@ -50,7 +50,7 @@ Generic styles
 
 .jh-card {
     padding: 1.5%;
-    margin-top: 20px;
+    margin-top: 15px;
     border: none;
 }
 
@@ -182,6 +182,14 @@ http://www.sketchingwithcss.com/samplechapter/cheatsheet.html#right */
 /* ==========================================================================
 entity detail page css
 ========================================================================== */
+
+.container-fluid {
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
 .row.jh-entity-details > {
     dd {
         margin-bottom: 15px;

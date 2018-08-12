@@ -1,0 +1,97 @@
+<div class="card jh-card">
+    <h4 class="text-center"><span>{{name}}</span></h4>
+    <table class="table table-borderless table-sm">
+        <tbody>
+        <tr>
+            <td>Status</td>
+            <td class="text-right">{{platform.status}}</td>
+        </tr>
+        <tr>
+            <td>Total Budget</td>
+            <td class="text-right">{{platform.totalBudget}}</td>
+        </tr>
+        <tr>
+            <td>Remaining Budget</td>
+            <td class="text-right">{{platform.remainingBudget}}</td>
+        </tr>
+        <tr>
+            <td>Duration</td>
+            <td class="text-right">{{platform.startDate | date: "mediumDate"}} - {{platform.endDate | date: "mediumDate"}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="card jh-card" *ngIf="platform.targetAudiance">
+    <h5 class="card-title text-center">Target Audience</h5>
+    <table class="table table-borderless table-sm">
+        <tbody>
+        <tr>
+            <td>Languages</td>
+            <td class="text-right">{{platform.targetAudiance.languages}}</td>
+        </tr>
+        <tr>
+            <td>Genders</td>
+            <td class="text-right">{{platform.targetAudiance.genders}}</td>
+        </tr>
+        <tr>
+            <td>Age Range</td>
+            <td class="text-right">{{platform.targetAudiance.ageRange}}</td>
+        </tr>
+        <tr>
+            <td>Locations</td>
+            <td class="text-right">{{platform.targetAudiance.locations}}</td>
+        </tr>
+        <tr *ngIf="platform.targetAudiance.interests">
+            <td>Interests</td>
+            <td class="text-right">{{platform.targetAudiance.interests}}</td>
+        </tr>
+        <tr *ngIf="platform.targetAudiance.keywords">
+            <td>Keywords</td>
+            <td class="text-right">{{platform.targetAudiance.keywords}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="creatives text-center card" *ngIf="platform.creatives">
+    <img class="card-img-top" width="400px" src="/content/images/{{platform.creatives.image}}">
+    <div class="card-body">
+        <h5 class="card-title">{{platform.creatives.header}}</h5>
+        <p class="card-text">{{platform.creatives.description}}</p>
+        <a class="card-link" href="{{platform.creatives.url}}">{{platform.creatives.url}}</a>
+    </div>
+</div>
+<div class="card jh-card" *ngIf="platform.insights">
+    <h5 class="card-title text-center">Insights</h5>
+    <table class="table table-borderless table-sm">
+        <tbody>
+        <tr>
+            <td>Impressions</td>
+            <td class="text-right">{{platform.insights.impressions}}</td>
+        </tr>
+        <tr>
+            <td>Clicks</td>
+            <td class="text-right">{{platform.insights.clicks}}</td>
+        </tr>
+        <tr>
+            <td>Nanos Score</td>
+            <td class="text-right">{{platform.insights.nanosScore}}</td>
+        </tr>
+        <tr>
+            <td>Cost Per Click</td>
+            <td class="text-right">{{platform.insights.costPerClick}}</td>
+        </tr>
+        <tr>
+            <td>Click Through Rate</td>
+            <td class="text-right">{{platform.insights.clickThroughRate}}</td>
+        </tr>
+        <tr>
+            <td>Advanced KPI 1</td>
+            <td class="text-right">{{platform.insights.advancedKpi1}}</td>
+        </tr>
+        <tr>
+            <td>Advanced KPI 2</td>
+            <td class="text-right">{{platform.insights.advancedKpi2}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
