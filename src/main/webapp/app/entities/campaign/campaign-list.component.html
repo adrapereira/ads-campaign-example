@@ -19,19 +19,19 @@
                     <td>{{campaign.totalBudget}}</td>
                     <td>{{campaign.status}}</td>
                     <td>
-                        <span *ngIf="campaign.platforms['facebook'] as platform">
+                        <span *ngIf="campaign.platforms.facebook as platform">
                             {{platform.status}}
                             <span class="platform-dates">{{platform.startDate | date:'mediumDate'}} - {{platform.endDate | date:'mediumDate'}}</span>
                         </span>
                     </td>
                     <td>
-                        <span *ngIf="campaign.platforms['instagram'] as platform">
+                        <span *ngIf="campaign.platforms.instagram as platform">
                             {{platform.status}}
                             <span class="platform-dates">{{platform.startDate | date:'mediumDate'}} - {{platform.endDate | date:'mediumDate'}}</span>
                         </span>
                     </td>
                     <td>
-                        <span *ngIf="campaign.platforms['google'] as platform">
+                        <span *ngIf="campaign.platforms.google as platform">
                             {{platform.status}}
                             <span class="platform-dates">{{platform.startDate | date:'mediumDate'}} - {{platform.endDate | date:'mediumDate'}}</span>
                         </span>

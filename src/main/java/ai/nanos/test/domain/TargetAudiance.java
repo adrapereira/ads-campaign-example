@@ -15,6 +15,8 @@ public class TargetAudiance implements Serializable {
     private List<String> genders = null;
     @SerializedName("age_range")
     private List<Integer> ageRange = null;
+    @SerializedName("KeyWords")
+    private List<String> keywords = null;
     private List<String> locations = null;
     private List<String> interests = null;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
@@ -96,6 +98,14 @@ public class TargetAudiance implements Serializable {
     public TargetAudiance withAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
         return this;
+    }
+
+    public List<String> getKeywords() {
+        return keywords;
+    }
+
+    public void setKeywords(List<String> keywords) {
+        this.keywords = keywords;
     }
 
     @Override

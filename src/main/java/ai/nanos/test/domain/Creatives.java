@@ -1,6 +1,7 @@
 
 package ai.nanos.test.domain;
 
+import com.google.gson.annotations.SerializedName;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.io.Serializable;
@@ -10,6 +11,10 @@ import java.util.Map;
 public class Creatives implements Serializable {
 
     private String header;
+    @SerializedName("header_1")
+    private String header1;
+    @SerializedName("header_2")
+    private String header2;
     private String description;
     private String url;
     private String image;
@@ -79,6 +84,22 @@ public class Creatives implements Serializable {
     public Creatives withAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
         return this;
+    }
+
+    public String getHeader1() {
+        return header1;
+    }
+
+    public void setHeader1(String header1) {
+        this.header1 = header1;
+    }
+
+    public String getHeader2() {
+        return header2;
+    }
+
+    public void setHeader2(String header2) {
+        this.header2 = header2;
     }
 
     @Override

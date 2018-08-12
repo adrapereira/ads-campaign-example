@@ -1,5 +1,13 @@
-.header-details {
-    color: darkgray;
+.campaign-header{
+    .header-details {
+        color: darkgray;
+        font-size: 18px;
+        padding-left: 15px;
+    }
+
+    h2{
+        display: inline-block;
+    }
 }
 
 .creatives {
@@ -11,5 +19,15 @@
     img {
         display: block;
         margin: auto;
+    }
+}
+
+.row{
+    .col-4, .col-6{
+        padding-left: 0;
+    }
+
+    .col-4:last-child, .col-6:last-child{
+        padding-right: 0;
     }
 }

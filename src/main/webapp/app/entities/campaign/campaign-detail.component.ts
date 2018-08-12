@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
-import { ICampaign } from 'app/shared/model/campaign.model';
+import {ICampaign} from 'app/shared/model/campaign.model';
 
 @Component({
     selector: 'nanos-campaign-detail',
@@ -10,16 +10,18 @@ import { ICampaign } from 'app/shared/model/campaign.model';
 })
 export class CampaignDetailComponent implements OnInit {
     campaign: ICampaign;
+    columnSize;
 
     constructor(private activatedRoute: ActivatedRoute) {}
 
     ngOnInit() {
         this.activatedRoute.data.subscribe(({ campaign }) => {
             this.campaign = campaign;
+            let platformsSize = Object.keys(campaign.platforms).length;
+            if (platformsSize === 0) {
+                platformsSize = 1;
+            }
+            this.columnSize = 12 / platformsSize;
         });
-    }
-
-    previousState() {
-        window.history.back();
     }
 }

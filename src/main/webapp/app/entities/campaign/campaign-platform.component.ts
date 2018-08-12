@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
     selector: 'nanos-campaign-platform',
@@ -11,5 +11,7 @@ export class CampaignPlatformComponent implements OnInit {
 
     constructor() {}
 
-    ngOnInit() {}
+    ngOnInit() {
+        console.log(this.platform);
+    }
 }

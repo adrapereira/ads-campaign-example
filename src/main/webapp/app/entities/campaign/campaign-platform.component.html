@@ -27,27 +27,27 @@
         <tbody>
         <tr>
             <td>Languages</td>
-            <td class="text-right">{{platform.targetAudiance.languages}}</td>
+            <td class="text-right">{{platform.targetAudiance.languages.join(', ')}}</td>
         </tr>
         <tr>
             <td>Genders</td>
-            <td class="text-right">{{platform.targetAudiance.genders}}</td>
+            <td class="text-right">{{platform.targetAudiance.genders.join(', ')}}</td>
         </tr>
         <tr>
             <td>Age Range</td>
-            <td class="text-right">{{platform.targetAudiance.ageRange}}</td>
+            <td class="text-right">{{platform.targetAudiance.ageRange.join(' - ')}}</td>
         </tr>
         <tr>
             <td>Locations</td>
-            <td class="text-right">{{platform.targetAudiance.locations}}</td>
+            <td class="text-right">{{platform.targetAudiance.locations.join(', ')}}</td>
         </tr>
         <tr *ngIf="platform.targetAudiance.interests">
             <td>Interests</td>
-            <td class="text-right">{{platform.targetAudiance.interests}}</td>
+            <td class="text-right">{{platform.targetAudiance.interests.join(', ')}}</td>
         </tr>
         <tr *ngIf="platform.targetAudiance.keywords">
             <td>Keywords</td>
-            <td class="text-right">{{platform.targetAudiance.keywords}}</td>
+            <td class="text-right">{{platform.targetAudiance.keywords.join(', ')}}</td>
         </tr>
         </tbody>
     </table>
@@ -55,7 +55,12 @@
 <div class="creatives text-center card" *ngIf="platform.creatives">
     <img class="card-img-top" width="400px" src="/content/images/{{platform.creatives.image}}">
     <div class="card-body">
-        <h5 class="card-title">{{platform.creatives.header}}</h5>
+        <h5 class="card-title" *ngIf="platform.creatives.header; else doubleHeader">{{platform.creatives.header}}</h5>
+        <ng-template #doubleHeader>
+            <h4 class="card-title">{{platform.creatives.header1}}</h4>
+            <h5 class="card-title">{{platform.creatives.header2}}</h5>
+        </ng-template>
+
         <p class="card-text">{{platform.creatives.description}}</p>
         <a class="card-link" href="{{platform.creatives.url}}">{{platform.creatives.url}}</a>
     </div>
